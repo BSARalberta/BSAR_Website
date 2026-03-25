@@ -1,0 +1,21 @@
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import DonatePage from './pages/DonatePage'
+import JoinPage from './pages/JoinPage'
+import TransparencyPage from './pages/TransparencyPage'
+
+function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/donate" element={<DonatePage />} />
+        <Route path="/join" element={<JoinPage />} />
+        <Route path="/transparency" element={<TransparencyPage />} />
+      </Route>
+    </Routes>
+  )
+}
+
+export default App

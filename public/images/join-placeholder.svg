@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Join page placeholder</title>
+  <desc id="desc">Placeholder image for the Join page.</desc>
+  <rect width="1200" height="800" fill="#f4efea"/>
+  <rect x="80" y="80" width="1040" height="640" rx="40" fill="#ffffff" stroke="#111111" stroke-width="10"/>
+  <g transform="translate(250 250)">
+    <circle cx="90" cy="40" r="40" fill="#111111"/>
+    <rect x="55" y="90" width="70" height="140" rx="24" fill="#111111"/>
+    <circle cx="250" cy="40" r="40" fill="#c1121f"/>
+    <rect x="215" y="90" width="70" height="140" rx="24" fill="#c1121f"/>
+    <circle cx="410" cy="40" r="40" fill="#111111"/>
+    <rect x="375" y="90" width="70" height="140" rx="24" fill="#111111"/>
+  </g>
+  <text x="600" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#111111">Join Image Placeholder</text>
+  <text x="600" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#4e4b48">Replace with a team photo or volunteer recruitment image</text>
+</svg>

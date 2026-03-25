@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Donate page placeholder</title>
+  <desc id="desc">Placeholder image for the Donate page.</desc>
+  <rect width="1200" height="800" fill="#f5efeb"/>
+  <rect x="80" y="80" width="1040" height="640" rx="40" fill="#ffffff" stroke="#c1121f" stroke-width="10"/>
+  <circle cx="320" cy="400" r="110" fill="#c1121f"/>
+  <path d="M320 345c22-40 88-28 88 24 0 54-88 106-88 106s-88-52-88-106c0-52 66-64 88-24Z" fill="#ffffff"/>
+  <text x="720" y="350" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#111111">Donate Image Placeholder</text>
+  <text x="720" y="420" font-family="Arial, sans-serif" font-size="30" fill="#4e4b48">Swap this file with a donor, training, or support-focused image later.</text>
+</svg>
