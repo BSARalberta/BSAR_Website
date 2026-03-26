@@ -42,7 +42,7 @@ npm run preview
 ├── public/
 │   └── images/
 │       ├── donate-placeholder.svg
-│       ├── hero-placeholder.svg
+│       ├── biker_injury.jpg
 │       ├── join-placeholder.svg
 │       ├── logo-placeholder.svg
 │       └── transparency-placeholder.svg
@@ -77,7 +77,7 @@ Placeholder images live in [`public/images/`](/home/loganj/Documents/BSAR%20Webs
 Current stand-in files:
 
 - `logo-placeholder.svg`
-- `hero-placeholder.svg`
+- `biker_injury.jpg`
 - `donate-placeholder.svg`
 - `join-placeholder.svg`
 - `transparency-placeholder.svg`

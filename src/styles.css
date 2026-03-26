@@ -256,6 +256,11 @@ ul {
   object-fit: cover;
 }
 
+.page-hero:not(.page-hero-compact) .hero-image,
+.page-hero:not(.page-hero-compact) .image-fallback {
+  min-height: 570px;
+}
+
 .image-fallback {
   display: grid;
   place-items: center;
@@ -389,6 +394,12 @@ ul {
 .button-secondary {
   border: 1px solid rgba(193, 18, 31, 0.16);
   background: rgba(193, 18, 31, 0.06);
+  color: var(--color-primary-dark);
+}
+
+.button.button-secondary:hover,
+.button.button-secondary:focus-visible {
+  background: rgba(193, 18, 31, 0.12);
   color: var(--color-primary-dark);
 }
 
@@ -538,6 +549,11 @@ button:focus-visible {
   .hero-image,
   .image-fallback {
     min-height: 280px;
+  }
+
+  .page-hero:not(.page-hero-compact) .hero-image,
+  .page-hero:not(.page-hero-compact) .image-fallback {
+    min-height: 420px;
   }
 }
 

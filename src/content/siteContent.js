@@ -15,12 +15,12 @@ export const footerContent = {
 
 export const homeContent = {
   hero: {
-    eyebrow: 'Volunteer Search and Rescue',
-    title: 'Prepared volunteers supporting community safety across the Badlands region.',
+    eyebrow: 'Badlands Search and Rescue',
+    title: 'Prepared volunteers supporting the badlands region.',
     description:
-      'Badlands Search and Rescue is a community-focused volunteer organization dedicated to readiness, teamwork, and professional support when people need help most.',
+      'Badlands Search and Rescue is a community-focused volunteer organization dedicated to readiness, teamwork, and professional support when people need help the most.',
     image: {
-      src: '/images/hero-placeholder.svg',
+      src: '/images/biker_injury.jpg',
       alt: 'Placeholder hero banner for Badlands Search and Rescue',
       label: 'Hero banner placeholder',
     },
@@ -28,25 +28,25 @@ export const homeContent = {
   community: {
     title: 'Helping keep the community safe',
     paragraphs: [
-      'Search and rescue organizations play an important role in supporting emergency response, public safety, and community readiness. Their work depends on disciplined training, dependable equipment, and volunteers who can work calmly and effectively under pressure.',
-      'Badlands Search and Rescue is positioned as a trusted local resource that values preparation, coordination, and service. This site is designed to help community members understand the mission, support the team, and access public information.',
+      'Search and rescue organizations play a critical role in emergency response, public safety, and community readiness. Their work often involves locating missing or lost persons, providing first aid in remote or high-risk environments, and ensuring individuals are safely returned home. These efforts depend on disciplined training, dependable equipment, and volunteers who can operate calmly and effectively under pressure.',
+      'Badlands Search and Rescue is a trusted local resource dedicated to serving the community through rapid response, coordinated search efforts, and on-the-ground support during emergencies. Their team is committed to preparation, teamwork, and delivering reliable assistance when it matters most.',
     ],
   },
   values: [
     {
-      title: 'Professional approach',
+      title: 'Integrity and responsibility',
       description:
-        'A credible volunteer team is built on consistent training, clear procedures, and respect for partner agencies and the public.',
+        'BSAR members act with honesty, take responsibility for their actions, and make decisions they can stand behind. This builds trust with the public, partner agencies, and each other.',
     },
     {
-      title: 'Volunteer service',
+      title: 'Teamwork',
       description:
-        'Members contribute time, energy, and skill because they care about the safety and resilience of their communities.',
+        'BSAR works as a coordinated team, built on clear communication and mutual trust. By supporting one another, we respond effectively and deliver reliable results in the field.',
     },
     {
-      title: 'Community support',
+      title: 'Professionalism',
       description:
-        'Public trust is strengthened through transparency, steady communication, and practical ways for supporters to get involved.',
+        'BSAR delivers professional service through skill, preparation, and clear communication. We make sound decisions in the field to support agencies and ensure those in need receive effective, reliable care.',
     },
   ],
   ctas: [
@@ -64,22 +64,7 @@ export const homeContent = {
       to: '/join',
       linkLabel: 'Explore volunteer roles',
     },
-    {
-      title: 'Transparency',
-      description:
-        'View announcements, public notices, and space for future documents and reports.',
-      to: '/transparency',
-      linkLabel: 'Open public information',
-    },
   ],
-  latestAnnouncement: {
-    eyebrow: 'Latest announcement preview',
-    title: 'Public documents and notices have a dedicated home.',
-    description:
-      'Use the Transparency page to publish AGM notices, key updates, reports, and downloadable files in a clean, easy-to-maintain format.',
-    to: '/transparency',
-    linkLabel: 'View transparency updates',
-  },
 }
 
 export const donateContent = {
