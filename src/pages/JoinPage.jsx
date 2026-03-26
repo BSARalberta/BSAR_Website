@@ -18,7 +18,7 @@ function JoinPage() {
             <p>
               This page is written to set realistic expectations while still
               welcoming people who want to contribute. It can later be adapted
-              to reflect the organization’s specific intake process.
+              to reflect the organization’s specific intake process. Placeholder.
             </p>
             <ul className="detail-list">
               {joinContent.expectations.map((item) => (
