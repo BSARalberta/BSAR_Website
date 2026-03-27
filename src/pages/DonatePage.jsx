@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero'
+import DonationInquiryForm from '../components/DonationInquiryForm'
 import SectionHeading from '../components/SectionHeading'
 import { donateContent } from '../content/siteContent'
 
@@ -16,9 +17,7 @@ function DonatePage() {
 
           <div className="stack">
             <p>
-              Financial support gives volunteer organizations more stability and
-              more capacity to prepare responsibly. It helps turn community
-              goodwill into meaningful readiness.
+              Financial support directly improves our ability to prepare, respond, and save lives. It ensures our team has the training, equipment, and skills needed to act quickly and effectively when every second counts.
             </p>
             <ul className="detail-list">
               {donateContent.reasons.map((reason) => (
@@ -30,20 +29,31 @@ function DonatePage() {
       </section>
 
       <section className="section section-alt">
-        <div className="container action-panel">
+        <div className="container action-panel donate-contact-panel">
           <div>
-            <p className="eyebrow">Call to Action</p>
+            <p className="eyebrow">Support BSAR</p>
             <h2>{donateContent.cta.title}</h2>
             <p>{donateContent.cta.description}</p>
+            <ul className="detail-list">
+              {donateContent.cta.highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p>
+              Prefer to email us directly instead? Contact{' '}
+              <a className="text-link" href="mailto:info@badlandsearchandrescue.com">
+                info@badlandsearchandrescue.com
+              </a>
+              .
+            </p>
             <p className="muted-note">
-              {/* Replace this placeholder with a real donation URL or embed. */}
-              Add your live donation link, donor platform embed, or campaign
-              widget here when ready.
+              Submitting this form sends your inquiry to the BSAR team and a
+              confirmation email to the address you provide.
             </p>
           </div>
 
-          <div className="action-box" aria-label="Donation platform placeholder">
-            <span>{donateContent.cta.buttonLabel}</span>
+          <div className="form-panel" aria-label="Donation inquiry form">
+            <DonationInquiryForm />
           </div>
         </div>
       </section>

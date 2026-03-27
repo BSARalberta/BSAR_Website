@@ -70,26 +70,29 @@ export const homeContent = {
 export const donateContent = {
   hero: {
     eyebrow: 'Support the Mission',
-    title: 'Donations help strengthen readiness before help is needed.',
+    title: 'Donations strengthen readiness.',
     description:
-      'Community support helps a volunteer organization sustain training, maintain equipment, improve operational readiness, and continue serving responsibly.',
+      'Your support keeps our team trained, equipped, and ready to find the missing, provide aid, and bring people home safely.',
     image: {
-      src: '/images/donate-placeholder.svg',
+      src: '/images/happy_members.jpg',
       alt: 'Placeholder image for the donate page',
       label: 'Donate page image placeholder',
     },
   },
   reasons: [
-    'Training helps volunteers build the judgment, coordination, and confidence required in demanding situations.',
-    'Equipment support helps keep response tools, communications, and field readiness up to standard.',
-    'Operational funding helps the team stay organized, prepared, and able to support the community when called upon.',
-    'Community readiness investments help strengthen outreach, preparedness, and long-term sustainability.',
+    'Specialty training equips volunteers with skills to make our team more versitile and better prepared for any situation.',
+    'Proper equipment ensures our team has reliable tools and communication in the field.',
+    'Community investments help strengthen outreach, preparedness, and long-term sustainability.',
   ],
   cta: {
-    title: 'Future donation link or platform goes here',
+    title: 'Discuss a donation, sponsorship, or in-kind contribution',
     description:
-      'Replace this placeholder with a secure donation button, fundraising link, or embedded giving platform when ready.',
-    buttonLabel: 'Donation platform placeholder',
+      'Use this form to contact Badlands Search and Rescue about financial donations, corporate sponsorships, equipment support, or fundraising partnerships.',
+    highlights: [
+      'Tell us how you would like to support BSAR and any relevant details about your contribution or idea.',
+      'Include event timelines, sponsorship questions, or notes about equipment or services you would like to provide.',
+      'A team member will review your inquiry and follow up by email as soon as possible.',
+    ],
   },
 }
 

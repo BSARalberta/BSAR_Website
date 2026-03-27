@@ -35,20 +35,35 @@ npm run build
 npm run preview
 ```
 
+## Donation Form Email Setup
+
+The Donate page includes a donation inquiry form that posts to [`api/donation.js`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/api/donation.js) and sends two emails through Resend:
+
+- A notification to the BSAR team
+- A confirmation email back to the person who submitted the form
+
+Create a local env file from [`.env.example`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/.env.example) and set:
+
+- `RESEND_API_KEY`
+- `DONATION_NOTIFY_EMAIL`
+- `DONATION_FROM_EMAIL`
+
+`DONATION_FROM_EMAIL` must be a verified sender/domain in Resend.
+
+If you want to test the Vercel function locally, use `vercel dev`. `npm run dev` only starts the Vite frontend.
+
 ## Project Structure
 
 ```text
 .
+├── api/
+│   └── donation.js
 ├── public/
 │   └── images/
-│       ├── donate-placeholder.svg
-│       ├── biker_injury.jpg
-│       ├── join-placeholder.svg
-│       ├── logo-placeholder.svg
-│       └── transparency-placeholder.svg
 ├── src/
 │   ├── components/
 │   │   ├── ContentCard.jsx
+│   │   ├── DonationInquiryForm.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Header.jsx
 │   │   ├── ImagePlaceholder.jsx
@@ -78,7 +93,7 @@ Current stand-in files:
 
 - `logo-placeholder.svg`
 - `biker_injury.jpg`
-- `donate-placeholder.svg`
+- `happy_members.jpg`
 - `join-placeholder.svg`
 - `transparency-placeholder.svg`
 
