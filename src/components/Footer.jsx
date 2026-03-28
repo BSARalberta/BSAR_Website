@@ -7,9 +7,7 @@ function Footer() {
       <div className="container footer-grid">
         <div>
           <p className="footer-title">{footerContent.organization}</p>
-          <p className="footer-copy">
-            Community-focused volunteer search and rescue website starter.
-          </p>
+          <p className="footer-copy">{footerContent.description}</p>
         </div>
 
         <div>
@@ -29,10 +27,39 @@ function Footer() {
         </div>
 
         <div>
-          <p className="footer-heading">{footerContent.contactLabel}</p>
-          <p className="footer-copy">{footerContent.contactValue}</p>
-          <p className="footer-heading">{footerContent.socialLabel}</p>
-          <p className="footer-copy">{footerContent.socialValue}</p>
+          <p className="footer-heading">Contact</p>
+          <div className="footer-links">
+            {footerContent.contactEmails.map((email) => (
+              <a key={email} className="footer-link" href={`mailto:${email}`}>
+                {email}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="footer-heading">Social</p>
+          <a
+            className="footer-social-link"
+            href={footerContent.facebook.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={footerContent.facebook.label}
+          >
+            <svg
+              aria-hidden="true"
+              className="footer-social-icon"
+              viewBox="0 0 250 250"
+              role="img"
+            >
+              <circle cx="125" cy="125" r="125" fill="#ffffff" />
+              <path
+                d="M143 250V137h38l6-44h-44V65c0-13 4-22 23-22h24V4c-4-1-18-2-35-2-35 0-58 21-58 60v31H58v44h39v113z"
+                fill="#111111"
+              />
+            </svg>
+            <span className="sr-only">{footerContent.facebook.label}</span>
+          </a>
         </div>
       </div>
     </footer>

@@ -165,8 +165,10 @@ ul {
 }
 
 .brand-tag {
-  color: var(--color-text-muted);
-  font-size: 0.92rem;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .menu-toggle {
@@ -905,7 +907,7 @@ ul {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1.1fr 0.8fr 1.2fr 0.6fr;
   gap: 1.5rem;
 }
 
@@ -937,6 +939,28 @@ ul {
 .footer-link:hover,
 .footer-link:focus-visible {
   color: #fff;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.footer-social-icon {
+  width: 64px;
+  height: 64px;
+  display: block;
 }
 
 a:focus-visible,

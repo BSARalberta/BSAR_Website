@@ -7,10 +7,18 @@ export const navigation = [
 
 export const footerContent = {
   organization: 'Badlands Search and Rescue',
-  contactLabel: 'Placeholder contact info',
-  contactValue: 'info@your-organization.ca',
-  socialLabel: 'Placeholder social links',
-  socialValue: '@badlandssearchandrescue',
+  description: 'Volunteer search and rescue service supporting the badlands region.',
+  contactEmails: [
+    'info@badlandsearchandrescue.com',
+    'president@badlandsearchandrescue.com',
+    'secretary@badlandsearchandrescue.com',
+    'treasurer@badlandsearchandrescue.com',
+    'vicepresident@badlandsearchandrescue.com',
+  ],
+  facebook: {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/badlandsar/',
+  },
 }
 
 export const homeContent = {

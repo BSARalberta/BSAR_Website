@@ -18,7 +18,9 @@ function Header() {
           />
           <span className="brand-text">
             <span className="brand-name">Badlands Search and Rescue</span>
-            <span className="brand-tag">Volunteer organization website</span>
+            <a className="brand-tag" href="tel:+18552997738">
+              Tasking Agencies Only: +1-855-299-7738
+            </a>
           </span>
         </NavLink>
 
