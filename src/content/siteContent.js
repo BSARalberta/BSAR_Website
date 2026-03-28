@@ -6,8 +6,8 @@ export const navigation = [
 ]
 
 export const footerContent = {
-  organization: 'Badlands Search and Rescue',
-  description: 'Volunteer search and rescue service supporting the badlands region.',
+  organization: 'Badlands Search and Rescue Association',
+  description: 'Search and rescue service supporting Alberta’s badlands region through emergency response, public safety, and community readiness.',
   contactEmails: [
     'info@badlandsearchandrescue.com',
     'president@badlandsearchandrescue.com',
@@ -23,10 +23,10 @@ export const footerContent = {
 
 export const homeContent = {
   hero: {
-    eyebrow: 'Badlands Search and Rescue',
-    title: 'Prepared volunteers supporting the badlands region.',
+    eyebrow: 'Badlands Search and Rescue Association',
+    title: 'Alberta badlands search and rescue.',
     description:
-      'Badlands Search and Rescue is a community-focused volunteer organization dedicated to readiness, teamwork, and professional support when people need help the most.',
+      'Badlands Search and Rescue Association is a community-focused search and rescue organization serving Alberta’s badlands region through readiness, teamwork, and emergency support when people need help the most.',
     image: {
       src: '/images/biker_injury.jpg',
       alt: 'Placeholder hero banner for Badlands Search and Rescue',
