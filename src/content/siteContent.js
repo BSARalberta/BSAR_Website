@@ -116,8 +116,9 @@ export const transparencyBanner = {
   description:
     'Find ways to connect with our team, attend public events, and stay informed on important updates.',
   image: {
-    src: '/images/map_radio.jpg',
+    src: '/images/BSAR_logo.jpg',
     alt: 'Placeholder banner for the transparency page',
     label: 'Transparency banner placeholder',
+    squareContain: true,
   },
 }

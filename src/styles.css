@@ -256,6 +256,15 @@ ul {
   object-fit: cover;
 }
 
+.hero-image-square-contain {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  height: auto;
+  object-fit: contain;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.96);
+}
+
 .image-fallback {
   display: grid;
   place-items: center;

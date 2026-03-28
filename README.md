@@ -172,7 +172,7 @@ Current stand-in files:
 - `biker_injury.jpg`
 - `happy_members.jpg`
 - `shake_hands.jpg`
-- `map_radio.jpg`
+- `BSAR_logo.jpg`
 
 You can replace these with real assets in one of two ways:
 

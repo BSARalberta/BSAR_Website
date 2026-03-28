@@ -1,6 +1,8 @@
 import ImagePlaceholder from './ImagePlaceholder'
 
 function PageHero({ eyebrow, title, description, image, compact = false }) {
+  const heroImageClassName = `hero-image${image?.squareContain ? ' hero-image-square-contain' : ''}`
+
   return (
     <section className={`page-hero${compact ? ' page-hero-compact' : ''}`}>
       <div className="container page-hero-grid">
@@ -15,7 +17,7 @@ function PageHero({ eyebrow, title, description, image, compact = false }) {
             src={image?.src}
             alt={image?.alt}
             label={image?.label}
-            className="hero-image"
+            className={heroImageClassName}
             priority
           />
         </div>
