@@ -94,8 +94,8 @@ Current stand-in files:
 - `logo-placeholder.svg`
 - `biker_injury.jpg`
 - `happy_members.jpg`
-- `join-placeholder.svg`
-- `transparency-placeholder.svg`
+- `shakje_hands.jpg`
+- `map_radio.jpg`
 
 You can replace these with real assets in one of two ways:
 

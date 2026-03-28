@@ -12,7 +12,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/join" element={<JoinPage />} />
-        <Route path="/transparency" element={<TransparencyPage />} />
+        <Route path="/public-events-info" element={<TransparencyPage />} />
       </Route>
     </Routes>
   )

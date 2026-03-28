@@ -1,10 +1,8 @@
 import PageHero from '../components/PageHero'
-import SectionHeading from '../components/SectionHeading'
 import ContentCard from '../components/ContentCard'
-import {
-  transparencyBanner,
-  transparencySections,
-} from '../content/siteContent'
+import PublicDocumentsSection from '../components/PublicDocumentsSection'
+import TransparencySection from '../components/TransparencySection'
+import { transparencyBanner, transparencyContent } from '../content/siteContent'
 
 function TransparencyPage() {
   return (
@@ -13,27 +11,24 @@ function TransparencyPage() {
 
       <section className="section">
         <div className="container">
-          <SectionHeading
-            eyebrow="Public Records"
-            title="Organized sections make this page easy to maintain as updates are added"
-            description="Each block below can be edited by updating the content arrays in the site data file."
-          />
-
           <div className="stack-xl">
-            {transparencySections.map((section) => (
-              <section key={section.title} className="document-section">
-                <div className="document-section-header">
-                  <h2>{section.title}</h2>
-                  <p>{section.description}</p>
-                </div>
+            <TransparencySection {...transparencyContent.events}>
+              <div className="card-grid card-grid-two">
+                {transparencyContent.events.items.map((item) => (
+                  <ContentCard key={item.title} {...item} />
+                ))}
+              </div>
+            </TransparencySection>
 
-                <div className="card-grid card-grid-two">
-                  {section.items.map((item) => (
-                    <ContentCard key={item.title} {...item} />
-                  ))}
-                </div>
-              </section>
-            ))}
+            <TransparencySection {...transparencyContent.agm}>
+              <div className="card-grid card-grid-two">
+                {transparencyContent.agm.items.map((item) => (
+                  <ContentCard key={item.title} {...item} />
+                ))}
+              </div>
+            </TransparencySection>
+
+            <PublicDocumentsSection />
           </div>
         </div>
       </section>

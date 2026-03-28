@@ -63,7 +63,6 @@ function DonationInquiryForm() {
         <p className="donation-form-kicker">Donation Inquiry</p>
         <h3>Contact the BSAR team</h3>
         <p>
-          Tell us how you would like to support Badlands Search and Rescue.
           Required fields are marked with an asterisk.
         </p>
       </div>
