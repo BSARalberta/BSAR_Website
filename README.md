@@ -52,6 +52,71 @@ Create a local env file from [`.env.example`](/home/loganj/Documents/BSAR%20Webs
 
 If you want to test the Vercel function locally, use `vercel dev`. `npm run dev` only starts the Vite frontend.
 
+## Supabase Events And AGM Setup
+
+The Public Events & Info page and the admin listings page use Supabase for:
+
+- public event and AGM listings
+- admin authentication
+- listing image uploads
+
+### Required env vars
+
+Add these Vite env vars to your local `.env` file and Vercel project settings:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+The browser code only uses the anon key. Do not place a `service_role` key in frontend code.
+
+### Table setup
+
+Create the `public.listings` table in Supabase using the schema below:
+
+```sql
+create table public.listings (
+  id uuid primary key default gen_random_uuid(),
+  type text not null check (type in ('event', 'agm')),
+  title text not null,
+  slug text not null unique,
+  image_url text,
+  starts_at timestamptz not null,
+  location text not null,
+  map_link text,
+  description text,
+  more_info text,
+  price_text text,
+  cta_text text,
+  cta_link text,
+  is_published boolean not null default false,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+```
+
+Recommended follow-up:
+
+- enable Row Level Security on `public.listings`
+- add a public `select` policy for published listings
+- add authenticated `insert`, `update`, and `delete` policies for admin users
+
+### Storage bucket setup
+
+Create a public Supabase Storage bucket named `event-images`.
+
+The admin form uploads images to this bucket and stores the resulting public URL in `public.listings.image_url`.
+
+### First admin user
+
+Create your first admin user in Supabase Auth:
+
+1. Open Supabase Dashboard.
+2. Go to Authentication > Users.
+3. Create or invite the admin user.
+4. Sign in at `/admin/listings` with that email and password.
+
+This implementation assumes your RLS policies allow authenticated admin users to manage listings.
+
 ## Project Structure
 
 ```text
@@ -63,19 +128,31 @@ If you want to test the Vercel function locally, use `vercel dev`. `npm run dev`
 ├── src/
 │   ├── components/
 │   │   ├── ContentCard.jsx
+│   │   ├── AdminListingForm.jsx
 │   │   ├── DonationInquiryForm.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Header.jsx
 │   │   ├── ImagePlaceholder.jsx
 │   │   ├── Layout.jsx
+│   │   ├── ListingCard.jsx
+│   │   ├── ListingDetailContent.jsx
 │   │   ├── PageHero.jsx
+│   │   ├── PublicDocumentsSection.jsx
+│   │   ├── PublicListingsSection.jsx
 │   │   └── SectionHeading.jsx
 │   ├── content/
+│   │   ├── publicDocuments/
 │   │   └── siteContent.js
+│   ├── lib/
+│   │   ├── listings.js
+│   │   ├── listingUtils.js
+│   │   └── supabaseClient.js
 │   ├── pages/
+│   │   ├── AdminListingsPage.jsx
 │   │   ├── DonatePage.jsx
 │   │   ├── HomePage.jsx
 │   │   ├── JoinPage.jsx
+│   │   ├── ListingDetailPage.jsx
 │   │   └── TransparencyPage.jsx
 │   ├── App.jsx
 │   ├── main.jsx
@@ -94,7 +171,7 @@ Current stand-in files:
 - `logo-placeholder.svg`
 - `biker_injury.jpg`
 - `happy_members.jpg`
-- `shakje_hands.jpg`
+- `shake_hands.jpg`
 - `map_radio.jpg`
 
 You can replace these with real assets in one of two ways:
@@ -115,9 +192,9 @@ That file controls:
 - Hero copy
 - Feature sections
 - CTA cards
-- Donate, Join, and Transparency text
+- Donate, Join, and Public Events & Info text
 - Footer placeholder contact details
-- Public document list entries
+- Public Events & Info hero copy
 
 If you want to change page structure instead of copy, edit the page components in:
 
@@ -126,30 +203,23 @@ If you want to change page structure instead of copy, edit the page components i
 - [`src/pages/JoinPage.jsx`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/src/pages/JoinPage.jsx)
 - [`src/pages/TransparencyPage.jsx`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/src/pages/TransparencyPage.jsx)
 
-## How to Add Documents to the Transparency Page
+## How To Add Public Documents
 
-The Transparency page is powered by structured arrays in [`siteContent.js`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/src/content/siteContent.js).
+Public documents are read from:
 
-To add or update a document:
+- [`src/content/publicDocuments/files/`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/src/content/publicDocuments/files/)
 
-1. Open the `transparencySections` array.
-2. Find the section you want to edit, such as `Important documents` or `Reports and public information`.
-3. Add a new item object with a title, description, metadata label, and link text.
-4. If you upload a real PDF later, replace the placeholder `href` with the file path or external URL.
+Optional metadata lives in:
 
-Example:
+- [`src/content/publicDocuments/metadata.js`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/src/content/publicDocuments/metadata.js)
 
-```js
-{
-  title: 'Annual report 2026',
-  description: 'Summary of activities, readiness priorities, and volunteer development.',
-  meta: 'PDF placeholder',
-  href: '/documents/annual-report-2026.pdf',
-  linkLabel: 'Download PDF'
-}
-```
+To add a document:
 
-If you plan to host local PDFs, place them in `public/documents/` and link to them using `/documents/your-file.pdf`.
+1. Place the file in `src/content/publicDocuments/files/`.
+2. Add optional metadata keyed by the exact filename if you want a custom title, description, or category.
+3. Rebuild the site.
+
+If a file has no metadata, the page falls back to a title generated from the filename.
 
 ## Notes
 
