@@ -1,12 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import DonatePage from './pages/DonatePage'
 import JoinPage from './pages/JoinPage'
 import AboutPage from './pages/AboutPage'
+import AdminPage from './pages/AdminPage'
 import TransparencyPage from './pages/TransparencyPage'
 import ListingDetailPage from './pages/ListingDetailPage'
-import AdminListingsPage from './pages/AdminListingsPage'
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/public-events-info" element={<TransparencyPage />} />
         <Route path="/public-events-info/:slug" element={<ListingDetailPage />} />
-        <Route path="/admin/listings" element={<AdminListingsPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/listings" element={<Navigate to="/admin" replace />} />
       </Route>
     </Routes>
   )

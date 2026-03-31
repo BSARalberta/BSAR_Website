@@ -146,15 +146,7 @@ export const aboutContent = {
   board: {
     title: 'Current Board of Directors',
     description:
-      'This section is set up as a placeholder directory for board members. Names, photos, and email addresses can be replaced later when the admin editing workflow is added.',
-    members: [
-      { role: 'President', name: 'Board member name', email: 'president@badlandsearchandrescue.com' },
-      { role: 'Vice President', name: 'Board member name', email: 'vicepresident@badlandsearchandrescue.com' },
-      { role: 'Secretary', name: 'Board member name', email: 'secretary@badlandsearchandrescue.com' },
-      { role: 'Treasurer', name: 'Board member name', email: 'treasurer@badlandsearchandrescue.com' },
-      { role: 'Director', name: 'Board member name', email: 'board@badlandsearchandrescue.com' },
-      { role: 'Director', name: 'Board member name', email: 'board@badlandsearchandrescue.com' },
-    ],
+      'This board directory is driven by the admin system. If a role has no published information yet, the About page shows it as open.',
   },
 }
 
