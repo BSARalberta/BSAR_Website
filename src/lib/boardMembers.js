@@ -68,10 +68,20 @@ export async function updateBoardMember(id, values) {
 
 export async function deleteBoardMember(id) {
   const client = requireSupabase()
-  const { error } = await client.from(BOARD_MEMBERS_TABLE).delete().eq('id', id)
+  const { data, error } = await client
+    .from(BOARD_MEMBERS_TABLE)
+    .delete()
+    .eq('id', id)
+    .select('id')
 
   if (error) {
     throw error
+  }
+
+  if (!data || data.length === 0) {
+    throw new Error(
+      'The position was not deleted. Check that the board_members delete policy exists in Supabase and that your admin account is allowed to delete rows.',
+    )
   }
 }
 

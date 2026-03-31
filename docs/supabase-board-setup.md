@@ -105,6 +105,8 @@ using (true);
 
 If you already created some of these policies, drop or rename the old ones before re-running them.
 
+If deleting a position in `/admin` appears to do nothing, the usual cause is that this delete policy was never added to an older Supabase setup.
+
 ## Optional starter data
 
 Seeding is optional now. Admins can create positions directly in the `/admin` interface. If you still want starter rows:

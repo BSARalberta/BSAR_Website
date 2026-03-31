@@ -146,7 +146,7 @@ export const aboutContent = {
   board: {
     title: 'Current Board of Directors',
     description:
-      'This board directory is driven by the admin system. If a role has no published information yet, the About page shows it as open.',
+      'Meet the volunteer leaders who help guide Badlands Search and Rescue through planning, operations, stewardship, and service to the communities we support.',
   },
 }
 
