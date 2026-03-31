@@ -124,7 +124,7 @@ export const aboutContent = {
     eyebrow: 'About Badlands Search and Rescue',
     title: 'A team built to close a critical gap in coverage.',
     description:
-      'Badlands Search and Rescue was created to serve eastern communities beyond Calgary with dependable, organized search and rescue support. The page shares how the team began and leaves room for the current board directory that will later connect to admin-managed profiles.',
+      'Badlands Search and Rescue was created to serve eastern communities beyond Calgary, where a clear gap in search and rescue coverage meant local people, agencies, and families needed a stronger response closer to home.',
     image: {
       src: '/images/Scott.jpg',
       alt: 'Scott Campbell, founder of Badlands Search and Rescue, standing in the Alberta badlands',
