@@ -2,6 +2,7 @@ export const navigation = [
   { label: 'Home', to: '/' },
   { label: 'Donate', to: '/donate' },
   { label: 'Join', to: '/join' },
+  { label: 'About Us', to: '/about' },
   { label: 'Public Events & Info', to: '/public-events-info' },
 ]
 
@@ -115,6 +116,45 @@ export const joinContent = {
       alt: 'Placeholder image for the join page',
       label: 'Join page image placeholder',
     },
+  },
+}
+
+export const aboutContent = {
+  hero: {
+    eyebrow: 'About Badlands Search and Rescue',
+    title: 'A team built to close a critical gap in coverage.',
+    description:
+      'Badlands Search and Rescue was created to serve eastern communities beyond Calgary with dependable, organized search and rescue support. The page shares how the team began and leaves room for the current board directory that will later connect to admin-managed profiles.',
+    image: {
+      src: '/images/Scott.jpg',
+      alt: 'Scott Campbell, founder of Badlands Search and Rescue, standing in the Alberta badlands',
+      label: 'Founder image placeholder',
+    },
+  },
+  founderMessage: {
+    title: 'How Badlands Search and Rescue Started',
+    subtitle: 'Message From Our Founder',
+    byline: 'Scott Campbell',
+    signoff: 'Thank you',
+    paragraphs: [
+      'Badlands Search and Rescue started in the spring of 2010 when I found a significant gap in SAR coverage east of Calgary. I spoke to people with Search and Rescue Alberta and found there was a definite need to fill this hole. I started to reach out to the communities at large and within short order (January 2011) we had a board developed and shortly after that a team. This core group of people was indispensable in the early years of our formation. Without them BSAR would not exist. We developed, trained and worked hard. In the spring of 2012 we became associate members of SARAB and the following year we became full members. We continued to train regularly and even were called out a couple of times to assist other SAR teams.',
+      'In 2015, we began to go through a downshift in members as several people moved away and had significant changes in their life. Through the dedication of those that stayed with the team and through their encouragement we persevered and recruited a new group of over 15 people who are now fully trained to provide Ground Search & Rescue.',
+      'We have developed strong relationships with local SAR teams, especially Cochrane SAR (many thanks to Andy Potton) and with Foothills SAR. We have enjoyed the strong support of Calgary SAR with their generous gift of a Suburban early in our formation as well as receiving a command post from South Eastern Alberta SAR (Medicine Hat). Recently we acquired another Suburban from Didsbury SAR that we plan on utilizing as a Rapid Response Vehicle.',
+      'Through the dedication and commitment of our current team, I anticipate seeing BSAR continue to grow and expand in people, abilities, partnerships and resources.',
+    ],
+  },
+  board: {
+    title: 'Current Board of Directors',
+    description:
+      'This section is set up as a placeholder directory for board members. Names, photos, and email addresses can be replaced later when the admin editing workflow is added.',
+    members: [
+      { role: 'President', name: 'Board member name', email: 'president@badlandsearchandrescue.com' },
+      { role: 'Vice President', name: 'Board member name', email: 'vicepresident@badlandsearchandrescue.com' },
+      { role: 'Secretary', name: 'Board member name', email: 'secretary@badlandsearchandrescue.com' },
+      { role: 'Treasurer', name: 'Board member name', email: 'treasurer@badlandsearchandrescue.com' },
+      { role: 'Director', name: 'Board member name', email: 'board@badlandsearchandrescue.com' },
+      { role: 'Director', name: 'Board member name', email: 'board@badlandsearchandrescue.com' },
+    ],
   },
 }
 
