@@ -8,6 +8,22 @@ function Footer() {
         <div>
           <p className="footer-title">{footerContent.organization}</p>
           <p className="footer-copy">{footerContent.description}</p>
+          <a
+            className="footer-affiliation"
+            href={footerContent.affiliation.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="footer-affiliation-logo"
+              src={footerContent.affiliation.logo.src}
+              alt={footerContent.affiliation.logo.alt}
+            />
+            <span className="footer-affiliation-copy">
+              <span className="footer-affiliation-label">{footerContent.affiliation.label}</span>
+              <span className="footer-affiliation-name">{footerContent.affiliation.name}</span>
+            </span>
+          </a>
         </div>
 
         <div>

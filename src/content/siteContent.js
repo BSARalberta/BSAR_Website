@@ -8,7 +8,16 @@ export const navigation = [
 
 export const footerContent = {
   organization: 'Badlands Search and Rescue Association',
-  description: 'Search and rescue service supporting Alberta’s badlands region through emergency response, public safety, and community readiness.',
+  description: 'Provides Search and Rescue services supporting most of Badlands region of Alberta through incident response, public safety, community education and readiness',
+  affiliation: {
+    label: 'Operating under',
+    name: 'Search and Rescue Alberta',
+    href: 'https://saralberta.ca/',
+    logo: {
+      src: '/images/SAR-Alberta.png',
+      alt: 'Search and Rescue Alberta logo',
+    },
+  },
   contactEmails: [
     'info@badlandsearchandrescue.com',
     'president@badlandsearchandrescue.com',
@@ -89,7 +98,7 @@ export const donateContent = {
     },
   },
   reasons: [
-    'Specialty training equips volunteers with skills to make our team more versitile and better prepared for any situation.',
+    'Specialty training equips volunteers with skills to make our team more versatile and better prepared for any situation.',
     'Proper equipment ensures our team has reliable tools and communication in the field.',
     'Community investments help strengthen outreach, preparedness, and long-term sustainability.',
   ],

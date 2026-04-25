@@ -1139,6 +1139,45 @@ ul {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.footer-affiliation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+}
+
+.footer-affiliation:hover,
+.footer-affiliation:focus-visible {
+  color: #fff;
+}
+
+.footer-affiliation-logo {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.footer-affiliation-copy {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.footer-affiliation-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.footer-affiliation-name {
+  font-weight: 700;
+}
+
 .footer-link:hover,
 .footer-link:focus-visible {
   color: #fff;
