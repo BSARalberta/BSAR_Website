@@ -28,8 +28,9 @@
 body {
   margin: 0;
   background:
+    linear-gradient(180deg, rgba(247, 243, 241, 0.86), rgba(245, 242, 239, 0.9)),
     radial-gradient(circle at top left, rgba(193, 18, 31, 0.08), transparent 32%),
-    linear-gradient(180deg, #f7f3f1 0%, #f5f2ef 100%);
+    url('/images/BSAR-Background.jpg') center top / cover fixed no-repeat;
   color: var(--color-text);
 }
 
@@ -1102,7 +1103,6 @@ ul {
 }
 
 .site-footer {
-  margin-top: 3rem;
   padding: 2rem 0 3rem;
   background: #121212;
   color: rgba(255, 255, 255, 0.88);
