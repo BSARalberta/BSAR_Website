@@ -1,38 +1,90 @@
+import { useEffect, useState } from 'react'
 import ContentCard from './ContentCard'
 import TransparencySection from './TransparencySection'
-import { publicDocumentGroups } from '../content/publicDocuments'
+import {
+  fetchPublicFiles,
+  getPublicFileDownloadUrl,
+} from '../lib/publicFiles'
+import { hasSupabaseEnv } from '../lib/supabaseClient'
 
 function PublicDocumentsSection() {
+  const [publicFiles, setPublicFiles] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    let isMounted = true
+
+    async function loadPublicFiles() {
+      if (!hasSupabaseEnv) {
+        if (isMounted) {
+          setError('Supabase is not configured yet. Add the required env variables to load public files.')
+          setIsLoading(false)
+        }
+        return
+      }
+
+      try {
+        const nextPublicFiles = await fetchPublicFiles()
+
+        if (!isMounted) {
+          return
+        }
+
+        setPublicFiles(nextPublicFiles)
+        setError('')
+      } catch (loadError) {
+        if (isMounted) {
+          setError(loadError.message || 'We could not load public files right now.')
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false)
+        }
+      }
+    }
+
+    loadPublicFiles()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
   return (
     <TransparencySection
       eyebrow="Public Documents"
-      title="Download and view public documents">
-      {publicDocumentGroups.length > 0 ? (
-        <div className="stack-xl">
-          {publicDocumentGroups.map((group) => (
-            <section key={group.title} className="document-group">
-              <div className="document-group-header">
-                <h3>{group.title}</h3>
-                <p>
-                  For public visibility and transparency.
-                </p>
-              </div>
-
-              <div className="card-grid card-grid-two">
-                {group.items.map((document) => (
-                  <ContentCard
-                    key={document.filename}
-                    title={document.title}
-                    description={document.description}
-                    meta={document.meta}
-                    href={document.href}
-                    linkLabel="Open document"
-                    useAnchor
-                    newTab
-                  />
-                ))}
-              </div>
-            </section>
+      title="Download and view public documents"
+      description="Public reference files published by Badlands Search and Rescue.">
+      {isLoading ? (
+        <article className="content-card">
+          <div className="content-card-body">
+            <p className="card-meta">Loading</p>
+            <h3>Loading public files</h3>
+            <p>Published downloads will appear here shortly.</p>
+          </div>
+        </article>
+      ) : error ? (
+        <article className="content-card">
+          <div className="content-card-body">
+            <p className="card-meta">Unavailable</p>
+            <h3>Public files could not be loaded</h3>
+            <p>{error}</p>
+          </div>
+        </article>
+      ) : publicFiles.length > 0 ? (
+        <div className="card-grid card-grid-two">
+          {publicFiles.map((file) => (
+            <ContentCard
+              key={file.id}
+              className="public-document-card"
+              title={file.title}
+              description={file.description}
+              href={getPublicFileDownloadUrl(file.file_path)}
+              useAnchor
+              newTab
+              linkTitle
+            />
           ))}
         </div>
       ) : (
@@ -41,8 +93,8 @@ function PublicDocumentsSection() {
             <p className="card-meta">No documents published yet</p>
             <h3>Public files will appear here automatically</h3>
             <p>
-              Add files to the public documents folder and this section will generate
-              document entries from them at build time.
+              When admins upload files in the admin portal, they will appear here automatically
+              for public viewing and download.
             </p>
           </div>
         </article>

@@ -59,6 +59,7 @@ The Public Events & Info page and the admin listings page use Supabase for:
 - public event and AGM listings
 - admin authentication
 - listing image uploads
+- public file metadata and downloads
 
 ### Required env vars
 
@@ -113,9 +114,22 @@ Create your first admin user in Supabase Auth:
 1. Open Supabase Dashboard.
 2. Go to Authentication > Users.
 3. Create or invite the admin user.
-4. Sign in at `/admin/listings` with that email and password.
+4. Sign in at `/admin` with that email and password.
 
 This implementation assumes your RLS policies allow authenticated admin users to manage listings.
+
+## Supabase Public Files Setup
+
+Public documents now come from Supabase instead of the old build-time folder import.
+
+Create:
+
+- a public Storage bucket named `public-files`
+- a `public.public_files` table for file metadata
+- RLS policies allowing public `select` and authenticated `insert`, `update`, and `delete`
+- Storage policies allowing public `select` and authenticated `insert` and `delete`
+
+Full SQL and setup details live in [`docs/supabase-public-files-setup.md`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/docs/supabase-public-files-setup.md).
 
 ## Project Structure
 
@@ -205,21 +219,14 @@ If you want to change page structure instead of copy, edit the page components i
 
 ## How To Add Public Documents
 
-Public documents are read from:
+Public documents are now managed in the admin portal at `/admin`.
 
-- [`src/content/publicDocuments/files/`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/src/content/publicDocuments/files/)
+To publish a file:
 
-Optional metadata lives in:
-
-- [`src/content/publicDocuments/metadata.js`](/home/loganj/Documents/BSAR%20Website/BSAR_Website/src/content/publicDocuments/metadata.js)
-
-To add a document:
-
-1. Place the file in `src/content/publicDocuments/files/`.
-2. Add optional metadata keyed by the exact filename if you want a custom title, description, or category.
-3. Rebuild the site.
-
-If a file has no metadata, the page falls back to a title generated from the filename.
+1. Sign in with a Supabase Auth admin user.
+2. Open the `Public Files` section.
+3. Upload the file, add a title, and optionally add a short description.
+4. Save it. The file will appear on the Public Events & Info page automatically.
 
 ## Notes
 

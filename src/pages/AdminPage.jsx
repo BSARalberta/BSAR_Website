@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import AdminBoardManager from '../components/AdminBoardManager'
 import AdminListingsManager from '../components/AdminListingsManager'
+import AdminPublicFilesManager from '../components/AdminPublicFilesManager'
 import { footerContent } from '../content/siteContent'
 import { hasSupabaseEnv, supabase } from '../lib/supabaseClient'
 
@@ -107,7 +108,7 @@ function AdminPage() {
           <h1>Manage public information</h1>
           <p>
             Sign in with a Supabase Auth user allowed by your RLS policies, then choose whether
-            to edit events and AGMs or the board of directors.
+            to edit events and AGMs, the board of directors, or public files.
           </p>
         </div>
 
@@ -180,7 +181,7 @@ function AdminPage() {
             </div>
 
             {!activeSection ? (
-              <div className="card-grid card-grid-two">
+              <div className="card-grid card-grid-three">
                 <article className="cta-card admin-choice-card">
                   <div className="content-card-body">
                     <p className="card-meta">Events and AGMs</p>
@@ -218,11 +219,31 @@ function AdminPage() {
                     Manage Board
                   </button>
                 </article>
+
+                <article className="cta-card admin-choice-card">
+                  <div className="content-card-body">
+                    <p className="card-meta">Public Files</p>
+                    <h3>Manage downloadable documents</h3>
+                    <p>
+                      Upload, describe, and remove public files that appear in the Public
+                      Documents section.
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="button-secondary"
+                    onClick={() => setActiveSection('files')}
+                  >
+                    Manage Public Files
+                  </button>
+                </article>
               </div>
             ) : null}
 
             {activeSection === 'listings' ? <AdminListingsManager /> : null}
             {activeSection === 'board' ? <AdminBoardManager /> : null}
+            {activeSection === 'files' ? <AdminPublicFilesManager /> : null}
           </div>
         )}
       </div>
